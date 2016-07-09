@@ -45,7 +45,7 @@ function bundleify (options, callback) {
   .transform(compress(uglifyify), {
     global: true
   })
-  .plugin(options.compress ? collapser : noop)
+  // .plugin(options.compress ? collapser : noop)
   .bundle()
   .pipe(pipe(Exorcise, compress)(options)())
   .pipe(WriteStream(options))
